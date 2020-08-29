@@ -9,7 +9,7 @@
     <div v-else>
       <input type="text" v-model="filter" placeholder="Filter">
       <ul>
-        <li v-for="permission in filteredPermissions" :key="`${permission.holder}_${permission.node}`">
+        <li v-for="(permission, index) in filteredPermissions" :key="`${index}_${permission.holder}_${permission.node}`">
           <span class="type">{{ permission.holderType === 'group' ? 'G' : 'U' }}</span>
           <span class="holder">{{ permission.holderType === 'group' ? permission.holder : permission.holderName }}</span>
           <span class="node">{{ permission.node }}</span>
